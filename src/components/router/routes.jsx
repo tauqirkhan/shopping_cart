@@ -1,4 +1,4 @@
-import App from "../../App";
+import Home from "../home/home";
 import Error from "../errorPage/Error";
 import Shop from "../shop/shop";
 import Checkout from "../checkout/checkout";
@@ -7,7 +7,7 @@ import Product from "../product/product";
 const routes = [
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
     errorElement: <Error />,
   },
   {
