@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import fetchData from "./fetch";
 
-export default function useData(url) {
+export default function useData(url = "https://fakestoreapi.com/products") {
   const [data, setData] = useState([]);
 
   useEffect(() => {

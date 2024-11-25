@@ -1,0 +1,94 @@
+/* .categoryName {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 30px;
+} */
+
+.card {
+  font-size: 16px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(107, 76, 123, 0.3);
+  border: 1px solid rgb(147, 62, 62);
+  border-radius: 0px 0px 6px 6px;
+}
+
+.card:hover,
+.addCartBtn {
+  cursor: pointer;
+}
+
+.imageDiv {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  height: 160px;
+}
+
+.img {
+  width: 100px;
+  height: 150px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.card:hover .img {
+  transform: scale(1.1);
+}
+
+.information {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 5px 0px 5px;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  padding: 2px 3px;
+  border-radius: 10%;
+}
+
+.price {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.addCartBtn {
+  border: 1px solid var(--text-on-bg);
+  color: var(--text-on-bg);
+  padding: 5px;
+  font-size: 21px;
+  background-color: white;
+  border-radius: 5px;
+}

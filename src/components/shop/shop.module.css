@@ -1,0 +1,37 @@
+.main {
+  max-width: 70vw;
+  margin: auto;
+  margin-top: 12vh;
+}
+
+.categories {
+  position: fixed;
+  width: 10vw;
+  font-size: 21px;
+}
+
+.category {
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.category:hover {
+  cursor: pointer;
+  background-color: rgb(107, 76, 123, 0.2);
+}
+
+.active {
+  background-color: rgb(107, 76, 123, 0.2);
+  box-shadow: inset 5px 0px 0px var(--foreground-color);
+}
+
+.products {
+  flex: 1;
+  margin-left: 10vw;
+  padding-left: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  margin-top: 10px;
+  border-left: 1px solid rgb(107, 76, 123, 0.3);
+}
