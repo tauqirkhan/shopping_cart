@@ -1,0 +1,12 @@
+.addCartBtn {
+  cursor: pointer;
+}
+
+.addCartBtn {
+  border: 1px solid var(--text-on-bg);
+  color: var(--text-on-bg);
+  padding: 5px;
+  font-size: 21px;
+  background-color: white;
+  border-radius: 5px;
+}

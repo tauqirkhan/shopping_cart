@@ -1,12 +1,12 @@
 import useData from "../hook";
 import styles from "./products.module.css";
+import { AddCartBtn } from "../AddBtn/AddBtn";
 
 const Products = ({ categoryName }) => {
   const productsArr = useData(
     `https://fakestoreapi.com/products/category/${categoryName}`
   );
 
-  console.log("productArr", productsArr);
   if (!productsArr.length > 0) {
     return <h1>Loading...</h1>;
   }
@@ -48,7 +48,7 @@ const Products = ({ categoryName }) => {
               </div>
               <div className={styles.price}>$ {product.price}</div>
             </div>
-            <button className={styles.addCartBtn}>Add to cart</button>
+            <AddCartBtn />
           </div>
         );
       })}

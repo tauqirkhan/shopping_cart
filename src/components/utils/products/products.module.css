@@ -14,8 +14,7 @@
   border-radius: 0px 0px 6px 6px;
 }
 
-.card:hover,
-.addCartBtn {
+.card:hover {
   cursor: pointer;
 }
 
@@ -82,13 +81,4 @@
 .price {
   margin-bottom: 5px;
   font-weight: 700;
-}
-
-.addCartBtn {
-  border: 1px solid var(--text-on-bg);
-  color: var(--text-on-bg);
-  padding: 5px;
-  font-size: 21px;
-  background-color: white;
-  border-radius: 5px;
 }

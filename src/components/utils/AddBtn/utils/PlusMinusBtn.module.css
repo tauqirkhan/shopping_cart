@@ -1,0 +1,26 @@
+.plusMinusDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--text-on-bg);
+  color: var(--text-on-bg);
+  background-color: white;
+  font-weight: 600;
+}
+
+.minusBtn,
+.plusBtn {
+  font-size: 21px;
+  border: none;
+  padding: 5px 10px;
+  background-color: rgb(107, 76, 123, 0.3);
+}
+
+.minusBtn > svg,
+.plusBtn > svg {
+  font-weight: bold;
+}
+
+.addCartBtn {
+  cursor: pointer;
+}
