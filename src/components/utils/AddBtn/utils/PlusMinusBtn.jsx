@@ -1,13 +1,20 @@
 import styles from "./PlusMinusBtn.module.css";
+import { useContext } from "react";
+import SharedStateContext from "../../../SharedStateContext";
 
-export const PlusMinusBtn = ({ quantity, setQuantity }) => {
+export const PlusMinusBtn = ({ currentIndex }) => {
+  const { checkoutObject, setCheckoutObject } = useContext(SharedStateContext);
+
   const handleAddQuantity = () => {
-    setQuantity((prevValue) => prevValue + 1);
+    // setQuantity((prevValue) => prevValue + 1);
+    setCheckoutObject(increaseQuantity(checkoutObject, currentIndex));
   };
 
   const handleSubtractQuantity = () => {
-    setQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
+    // setQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
+    setCheckoutObject(decreaseQuantity(checkoutObject, currentIndex));
   };
+
   return (
     <div className={styles.plusMinusDiv}>
       <button className={styles.minusBtn} onClick={handleSubtractQuantity}>
@@ -26,7 +33,7 @@ export const PlusMinusBtn = ({ quantity, setQuantity }) => {
           />
         </svg>
       </button>
-      <p>{quantity}</p>
+      <p>{checkoutObject[currentIndex].quantity}</p>
       <button className={styles.plusBtn} onClick={handleAddQuantity}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,3 +52,23 @@ export const PlusMinusBtn = ({ quantity, setQuantity }) => {
     </div>
   );
 };
+
+function increaseQuantity(checkoutObject, currentIndex) {
+  const cloneObject = [...checkoutObject];
+
+  // const index = cloneObject.findIndex((product) => product.id === itemId);
+  cloneObject[currentIndex].quantity = cloneObject[currentIndex].quantity + 1;
+
+  return cloneObject;
+}
+
+function decreaseQuantity(checkoutObject, currentIndex) {
+  const cloneObject = [...checkoutObject];
+
+  // const index = cloneObject.findIndex((product) => product.id === itemId);
+  if (cloneObject[currentIndex].quantity > 0) {
+    cloneObject[currentIndex].quantity = cloneObject[currentIndex].quantity - 1;
+  }
+
+  return cloneObject;
+}

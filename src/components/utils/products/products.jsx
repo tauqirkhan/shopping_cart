@@ -48,7 +48,7 @@ const Products = ({ categoryName }) => {
               </div>
               <div className={styles.price}>$ {product.price}</div>
             </div>
-            <AddCartBtn />
+            <AddCartBtn itemId={product.id} itemPrice={product.price} />
           </div>
         );
       })}

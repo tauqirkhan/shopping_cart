@@ -12,7 +12,7 @@
 .plusBtn {
   font-size: 21px;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 15px;
   background-color: rgb(107, 76, 123, 0.3);
 }
 
@@ -21,6 +21,7 @@
   font-weight: bold;
 }
 
-.addCartBtn {
+.minusBtn:hover,
+.plusBtn:hover {
   cursor: pointer;
 }
