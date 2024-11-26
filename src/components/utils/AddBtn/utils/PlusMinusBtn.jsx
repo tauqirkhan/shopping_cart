@@ -3,16 +3,14 @@ import { useContext } from "react";
 import SharedStateContext from "../../../SharedStateContext";
 
 export const PlusMinusBtn = ({ currentIndex }) => {
-  const { checkoutObject, setCheckoutObject } = useContext(SharedStateContext);
+  const { checkoutArray, setCheckoutArray } = useContext(SharedStateContext);
 
   const handleAddQuantity = () => {
-    // setQuantity((prevValue) => prevValue + 1);
-    setCheckoutObject(increaseQuantity(checkoutObject, currentIndex));
+    setCheckoutArray(increaseQuantity(checkoutArray, currentIndex));
   };
 
   const handleSubtractQuantity = () => {
-    // setQuantity((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-    setCheckoutObject(decreaseQuantity(checkoutObject, currentIndex));
+    setCheckoutArray(decreaseQuantity(checkoutArray, currentIndex));
   };
 
   return (
@@ -33,7 +31,7 @@ export const PlusMinusBtn = ({ currentIndex }) => {
           />
         </svg>
       </button>
-      <p>{checkoutObject[currentIndex].quantity}</p>
+      <p>{checkoutArray[currentIndex].quantity}</p>
       <button className={styles.plusBtn} onClick={handleAddQuantity}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,19 +51,17 @@ export const PlusMinusBtn = ({ currentIndex }) => {
   );
 };
 
-function increaseQuantity(checkoutObject, currentIndex) {
-  const cloneObject = [...checkoutObject];
+function increaseQuantity(checkoutArray, currentIndex) {
+  const cloneObject = [...checkoutArray];
 
-  // const index = cloneObject.findIndex((product) => product.id === itemId);
   cloneObject[currentIndex].quantity = cloneObject[currentIndex].quantity + 1;
 
   return cloneObject;
 }
 
-function decreaseQuantity(checkoutObject, currentIndex) {
-  const cloneObject = [...checkoutObject];
+function decreaseQuantity(checkoutArray, currentIndex) {
+  const cloneObject = [...checkoutArray];
 
-  // const index = cloneObject.findIndex((product) => product.id === itemId);
   if (cloneObject[currentIndex].quantity > 0) {
     cloneObject[currentIndex].quantity = cloneObject[currentIndex].quantity - 1;
   }
