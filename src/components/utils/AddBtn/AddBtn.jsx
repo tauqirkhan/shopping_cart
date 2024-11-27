@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { PlusMinusBtn } from "./utils/PlusMinusBtn";
 import SharedStateContext from "../../SharedStateContext";
 
-export const AddCartBtn = ({ itemId, itemPrice }) => {
+export const AddCartBtn = ({ itemId, itemPrice, itemImage, itemName }) => {
   const { checkoutArray, setCheckoutArray } = useContext(SharedStateContext);
 
   const currentIndex = checkoutArray.findIndex(
@@ -11,18 +11,23 @@ export const AddCartBtn = ({ itemId, itemPrice }) => {
   );
 
   const handleAddBtn = () => {
-    setCheckoutArray(addToCart(itemId, itemPrice, checkoutArray, currentIndex));
+    setCheckoutArray(
+      addToCart(
+        itemId,
+        itemPrice,
+        itemImage,
+        itemName,
+        checkoutArray,
+        currentIndex
+      )
+    );
   };
 
   return (
     <>
       {checkoutArray[currentIndex] &&
       checkoutArray[currentIndex].quantity > 0 ? (
-        <PlusMinusBtn
-          itemId={itemId}
-          itemPrice={itemPrice}
-          currentIndex={currentIndex}
-        />
+        <PlusMinusBtn currentIndex={currentIndex} />
       ) : (
         <button className={styles.addCartBtn} onClick={handleAddBtn}>
           Add to cart
@@ -32,12 +37,25 @@ export const AddCartBtn = ({ itemId, itemPrice }) => {
   );
 };
 
-function addToCart(itemId, itemPrice, checkoutArray, currentIndex) {
+function addToCart(
+  itemId,
+  itemPrice,
+  itemImage,
+  itemName,
+  checkoutArray,
+  currentIndex
+) {
   const cloneObject = [...checkoutArray];
   if (checkoutArray[currentIndex]) {
     cloneObject[currentIndex].quantity = cloneObject[currentIndex].quantity + 1;
   } else {
-    cloneObject.push({ id: itemId, quantity: 1, price: itemPrice });
+    cloneObject.push({
+      id: itemId,
+      quantity: 1,
+      price: itemPrice,
+      image: itemImage,
+      name: itemName,
+    });
   }
   return cloneObject;
 }

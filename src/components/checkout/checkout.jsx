@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Header from "../utils/header/header";
 import styles from "./checkout.module.css";
 import Billing from "../utils/billing/Billing";
-import CheckoutProduct from "../utils/checkoutProduct/CheckoutProduct";
+import CheckoutProductCard from "../utils/checkoutProduct/CheckoutProductCard";
 
 const Checkout = () => {
   const { checkoutArray, setCheckoutArray } = useContext(SharedStateContext);
@@ -14,15 +14,32 @@ const Checkout = () => {
     0
   );
 
+  const roundTotalProductPrice = parseFloat(totalProductPrice.toFixed(2));
+
   return (
     <div className={styles.container}>
       <Header />
       <main className={styles.main}>
         <section className={styles.checkoutProducts}>
-          <CheckoutProduct />
-          <CheckoutProduct />
+          {checkoutArray.length > 0 &&
+            checkoutArray.map((product) => {
+              if (product.quantity > 0) {
+                return (
+                  <CheckoutProductCard
+                    key={product.id}
+                    productImageLink={product.image}
+                    productName={product.name}
+                    productQuantity={product.quantity}
+                    productPrice={product.price}
+                    checkoutArray={checkoutArray}
+                    setCheckoutArray={setCheckoutArray}
+                    productId={product.id}
+                  />
+                );
+              }
+            })}
         </section>
-        <Billing totalProductPrice={totalProductPrice} />
+        <Billing totalProductPrice={roundTotalProductPrice} />
       </main>
     </div>
   );

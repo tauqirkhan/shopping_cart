@@ -2,7 +2,7 @@ import styles from "./billing.module.css";
 
 const Billing = ({ totalProductPrice }) => {
   const deliveryFees = totalProductPrice > 100 ? 0 : 10;
-  const totalPrice = totalProductPrice + deliveryFees;
+  const totalPrice = (totalProductPrice + deliveryFees).toFixed(2);
 
   return (
     <section className={styles.billing}>

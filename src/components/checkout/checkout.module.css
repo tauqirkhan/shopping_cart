@@ -1,0 +1,6 @@
+.main {
+  display: flex;
+  margin-top: 10vh;
+  justify-content: space-between;
+  padding: 50px 50px 0px 50px;
+}

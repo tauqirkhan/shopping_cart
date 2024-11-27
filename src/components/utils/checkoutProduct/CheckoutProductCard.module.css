@@ -1,0 +1,35 @@
+.card {
+  border: 1px solid red;
+  display: flex;
+  min-width: 800px;
+  height: 150px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px 0px 20px;
+}
+
+.card:hover .image {
+  transform: scale(1.1);
+}
+
+.information {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.details {
+  width: 200px;
+}
+
+.totalAndDelete {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
