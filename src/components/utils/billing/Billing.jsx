@@ -1,26 +1,29 @@
 import styles from "./billing.module.css";
 
-const Billing = () => {
+const Billing = ({ totalProductPrice }) => {
+  const deliveryFees = totalProductPrice > 100 ? 0 : 10;
+  const totalPrice = totalProductPrice + deliveryFees;
+
   return (
     <section className={styles.billing}>
       <div className={styles.head}>
         <h2 className={styles.heading}>Billing</h2>
-        <h1 className={styles.headingPrice}>$105</h1>
+        <h1 className={styles.headingPrice}>${totalPrice}</h1>
       </div>
       <div className={styles.description}>
         <div className={styles.totalPrice}>
           <p>Product Price</p>
-          <p>$100</p>
+          <p>${totalProductPrice}</p>
         </div>
         <div className={styles.fees}>
-          <p>Delivery fees</p>
-          <p>$5</p>
+          <p>Delivery Charge</p>
+          <p>{deliveryFees === 0 ? "Free above $100" : `$${deliveryFees}`}</p>
         </div>
       </div>
       <div className={styles.checkout}>
         <div className={styles.totalAmount}>
           <p>Total</p>
-          <p>$105</p>
+          <p>${totalPrice}</p>
         </div>
         <button className={styles.payBtn}>Order & Pay</button>
       </div>
