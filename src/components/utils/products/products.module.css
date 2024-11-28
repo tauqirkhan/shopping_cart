@@ -9,6 +9,7 @@
   height: 350px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: rgb(107, 76, 123, 0.3);
   border: 1px solid rgb(147, 62, 62);
   border-radius: 0px 0px 6px 6px;
@@ -41,18 +42,27 @@
   transform: scale(1.1);
 }
 
+.linkCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .information {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 5px 0px 5px;
+  gap: 15px;
 }
 
 .mainInfo {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
 }
 
 .title {
@@ -79,6 +89,7 @@
 }
 
 .price {
+  font-size: 18px;
   margin-bottom: 5px;
   font-weight: 700;
 }

@@ -95,3 +95,8 @@ video {
   --text-on-bg: #933e3e;
   --text-on-fg: #ffffff;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
