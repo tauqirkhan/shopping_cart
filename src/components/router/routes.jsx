@@ -19,7 +19,7 @@ const routes = [
     element: <Checkout />,
   },
   {
-    path: "product:name",
+    path: "product/:id",
     element: <Product />,
   },
 ];

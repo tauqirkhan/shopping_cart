@@ -1,9 +1,43 @@
 import { useParams } from "react-router-dom";
+import useData from "../utils/hook";
+import Header from "../utils/header/header";
+import styles from "./product.module.css";
+import Error from "../errorPage/Error";
 
 const Product = () => {
-  const { name } = useParams();
+  const { id } = useParams();
+  const productsArr = useData();
 
-  return <>{name === "productId" ? <div>Hello</div> : <div>Nothing </div>}</>;
+  const product = productsArr.find((product) => product.id === parseInt(id));
+
+  if (product === undefined) return <h1>Loading...</h1>;
+
+  return (
+    <>
+      <Header />
+      <main className={styles.main}>
+        <section className={styles.leftSide}>
+          <div className={styles.imageDiv}>
+            <img
+              src={product.image}
+              alt={product.title}
+              className={styles.image}
+              draggable="false"
+            />
+          </div>
+          <div className={styles.information}>
+            <h2 className={styles.about}>Description</h2>
+            <p className={styles.description}>{product.description}</p>
+          </div>
+        </section>
+        <section className={styles.rightSide}>
+          <h1 className={styles.name}>{product.title}</h1>
+          <div className={styles.price}>${product.price}</div>
+          <button className={styles.addBtn}>Add</button>
+        </section>
+      </main>
+    </>
+  );
 };
 
 export default Product;

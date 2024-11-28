@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  max-width: 70vw;
+  margin: auto;
+  margin-top: 12vh;
+  gap: 50px;
+}
+
+.imageDiv {
+  padding: 10px;
+  border: 1px solid red;
+  width: 540px;
+  height: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 480px;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+.information {
+  margin-top: 25px;
+}
+
+.about {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.description {
+  font-size: 18px;
+  max-width: 540px;
+  margin-top: 20px;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.addBtn {
+  width: 120px;
+  height: 60px;
+  font-size: 21px;
+  border-radius: 10px;
+}
