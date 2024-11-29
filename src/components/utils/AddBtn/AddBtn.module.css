@@ -1,12 +1,21 @@
-.addCartBtn {
+.smallCardBtn:hover,
+.productPageBtn:hover {
   cursor: pointer;
 }
 
-.addCartBtn {
+.smallCardBtn {
   border: 1px solid var(--text-on-bg);
   color: var(--text-on-bg);
   padding: 5px;
   font-size: 21px;
   background-color: white;
   border-radius: 5px;
+}
+
+.productPageBtn {
+  max-width: 180px;
+  max-height: 120px;
+  padding: 12px 20px;
+  font-size: 21px;
+  border-radius: 10px;
 }

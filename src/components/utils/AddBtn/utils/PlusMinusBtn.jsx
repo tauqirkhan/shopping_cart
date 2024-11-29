@@ -2,7 +2,7 @@ import styles from "./PlusMinusBtn.module.css";
 import { useContext } from "react";
 import SharedStateContext from "../../../SharedStateContext";
 
-export const PlusMinusBtn = ({ currentIndex }) => {
+export const PlusMinusBtn = ({ currentIndex, parentName }) => {
   const { checkoutArray, setCheckoutArray } = useContext(SharedStateContext);
 
   const handleAddQuantity = () => {
@@ -14,7 +14,14 @@ export const PlusMinusBtn = ({ currentIndex }) => {
   };
 
   return (
-    <div className={styles.plusMinusDiv}>
+    <div
+      className={
+        parentName === "productPageBtn"
+          ? styles.productPageBtn
+          : styles.smallCardBtn
+      }
+      // className={styles.plusMinusDiv}
+    >
       <button className={styles.minusBtn} onClick={handleSubtractQuantity}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

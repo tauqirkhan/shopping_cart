@@ -3,7 +3,13 @@ import { useContext } from "react";
 import { PlusMinusBtn } from "./utils/PlusMinusBtn";
 import SharedStateContext from "../../SharedStateContext";
 
-export const AddCartBtn = ({ itemId, itemPrice, itemImage, itemName }) => {
+export const AddCartBtn = ({
+  itemId,
+  itemPrice,
+  itemImage,
+  itemName,
+  parentName = "smallCardBtn",
+}) => {
   const { checkoutArray, setCheckoutArray } = useContext(SharedStateContext);
 
   const currentIndex = checkoutArray.findIndex(
@@ -27,9 +33,16 @@ export const AddCartBtn = ({ itemId, itemPrice, itemImage, itemName }) => {
     <>
       {checkoutArray[currentIndex] &&
       checkoutArray[currentIndex].quantity > 0 ? (
-        <PlusMinusBtn currentIndex={currentIndex} />
+        <PlusMinusBtn currentIndex={currentIndex} parentName={parentName} />
       ) : (
-        <button className={styles.addCartBtn} onClick={handleAddBtn}>
+        <button
+          className={
+            parentName === "productPageBtn"
+              ? styles.productPageBtn
+              : styles.smallCardBtn
+          }
+          onClick={handleAddBtn}
+        >
           Add to cart
         </button>
       )}

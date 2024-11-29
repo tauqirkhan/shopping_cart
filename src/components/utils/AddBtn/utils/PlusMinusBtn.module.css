@@ -1,4 +1,4 @@
-.plusMinusDiv {
+.smallCardBtn {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,6 +6,17 @@
   color: var(--text-on-bg);
   background-color: white;
   font-weight: 600;
+}
+
+.productPageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 180px;
+  max-height: 120px;
+  padding: 12px 20px;
+  font-size: 21px;
+  border-radius: 10px;
 }
 
 .minusBtn,

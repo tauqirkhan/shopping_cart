@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useData from "../utils/hook";
 import Header from "../utils/header/header";
 import styles from "./product.module.css";
-import Error from "../errorPage/Error";
+import { AddCartBtn } from "../utils/AddBtn/AddBtn";
 
 const Product = () => {
   const { id } = useParams();
@@ -33,7 +33,14 @@ const Product = () => {
         <section className={styles.rightSide}>
           <h1 className={styles.name}>{product.title}</h1>
           <div className={styles.price}>${product.price}</div>
-          <button className={styles.addBtn}>Add</button>
+          <AddCartBtn
+            itemId={product.id}
+            itemPrice={product.price}
+            itemImage={product.image}
+            itemName={product.title}
+            parentName={"productPageBtn"}
+          />
+          {/* <button className={styles.addBtn}>Add</button> */}
         </section>
       </main>
     </>
