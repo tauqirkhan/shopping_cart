@@ -2,13 +2,14 @@ import styles from "./AddBtn.module.css";
 import { useContext } from "react";
 import { PlusMinusBtn } from "./utils/PlusMinusBtn";
 import SharedStateContext from "../../SharedStateContext";
+import PropTypes from "prop-types";
 
 export const AddCartBtn = ({
   itemId,
   itemPrice,
   itemImage,
   itemName,
-  parentName = "smallCardBtn",
+  parentName,
 }) => {
   const { checkoutArray, setCheckoutArray } = useContext(SharedStateContext);
 
@@ -48,6 +49,18 @@ export const AddCartBtn = ({
       )}
     </>
   );
+};
+
+AddCartBtn.propTypes = {
+  itemId: PropTypes.number.isRequired,
+  itemPrice: PropTypes.number.isRequired,
+  itemImage: PropTypes.string.isRequired,
+  itemName: PropTypes.string,
+  parentName: PropTypes.string,
+};
+
+AddCartBtn.defaultProps = {
+  parentName: "smallCardBtn",
 };
 
 function addToCart(

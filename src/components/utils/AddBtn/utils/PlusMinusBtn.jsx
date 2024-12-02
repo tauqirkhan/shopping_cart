@@ -1,6 +1,7 @@
 import styles from "./PlusMinusBtn.module.css";
 import { useContext } from "react";
 import SharedStateContext from "../../../SharedStateContext";
+import PropTypes from "prop-types";
 
 export const PlusMinusBtn = ({ currentIndex, parentName }) => {
   const { checkoutArray, setCheckoutArray } = useContext(SharedStateContext);
@@ -56,6 +57,11 @@ export const PlusMinusBtn = ({ currentIndex, parentName }) => {
       </button>
     </div>
   );
+};
+
+PlusMinusBtn.propTypes = {
+  currentIndex: PropTypes.number.isRequired,
+  parentName: PropTypes.string.isRequired,
 };
 
 function increaseQuantity(checkoutArray, currentIndex) {

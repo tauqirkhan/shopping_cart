@@ -2,6 +2,7 @@ import useData from "../hook";
 import styles from "./products.module.css";
 import { AddCartBtn } from "../AddBtn/AddBtn";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Products = ({ categoryName }) => {
   const productsArr = useData(
@@ -62,6 +63,10 @@ const Products = ({ categoryName }) => {
       })}
     </>
   );
+};
+
+Products.propTypes = {
+  categoryName: PropTypes.string.isRequired,
 };
 
 export default Products;

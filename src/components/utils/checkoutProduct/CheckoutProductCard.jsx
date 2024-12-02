@@ -1,4 +1,5 @@
 import styles from "./CheckoutProductCard.module.css";
+import PropTypes from "prop-types";
 
 const CheckoutProduct = ({
   productId,
@@ -52,6 +53,16 @@ const CheckoutProduct = ({
       </div>
     </div>
   );
+};
+
+CheckoutProduct.propTypes = {
+  productId: PropTypes.number.isRequired,
+  productImageLink: PropTypes.string.isRequired,
+  productName: PropTypes.string.isRequired,
+  productQuantity: PropTypes.number.isRequired,
+  productPrice: PropTypes.number.isRequired,
+  checkoutArray: PropTypes.array.isRequired,
+  setCheckoutArray: PropTypes.array.isRequired,
 };
 
 export default CheckoutProduct;

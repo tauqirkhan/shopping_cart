@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import PropTypes from "prop-types";
 
 const SharedStateContext = createContext();
 
@@ -25,6 +26,10 @@ export const SharedStateProvider = ({ children }) => {
       {children}
     </SharedStateContext.Provider>
   );
+};
+
+SharedStateProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default SharedStateContext;

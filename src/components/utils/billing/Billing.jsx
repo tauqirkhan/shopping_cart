@@ -1,4 +1,5 @@
 import styles from "./billing.module.css";
+import PropTypes from "prop-types";
 
 const Billing = ({ totalProductPrice }) => {
   const deliveryFees =
@@ -30,6 +31,10 @@ const Billing = ({ totalProductPrice }) => {
       </div>
     </section>
   );
+};
+
+Billing.propTypes = {
+  totalProductPrice: PropTypes.number.isRequired,
 };
 
 export default Billing;
