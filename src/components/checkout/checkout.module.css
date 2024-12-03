@@ -4,3 +4,9 @@
   justify-content: space-between;
   padding: 50px 50px 0px 50px;
 }
+
+.checkoutProducts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

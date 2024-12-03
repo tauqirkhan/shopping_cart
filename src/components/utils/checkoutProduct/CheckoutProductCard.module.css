@@ -1,11 +1,16 @@
 .card {
-  border: 1px solid red;
   display: flex;
   min-width: 800px;
   height: 150px;
   align-items: center;
   justify-content: space-between;
   padding: 0px 20px 0px 20px;
+  box-shadow: 0px 0px 10px 5px rgb(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card > * {
+  min-width: 150px;
 }
 
 .card:hover .image {
@@ -32,4 +37,13 @@
   display: flex;
   gap: 40px;
   align-items: center;
+}
+
+.total {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.delete:hover {
+  cursor: pointer;
 }

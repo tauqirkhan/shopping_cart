@@ -1,5 +1,6 @@
 import styles from "./CheckoutProductCard.module.css";
 import PropTypes from "prop-types";
+import { AddCartBtn } from "../AddBtn/AddBtn";
 
 const CheckoutProduct = ({
   productId,
@@ -33,7 +34,13 @@ const CheckoutProduct = ({
           <div className={styles.title}>{productName}</div>
         </div>
       </div>
-      <div className={styles.adjustBtns}>{productQuantity}</div>
+      <AddCartBtn
+        itemId={productId}
+        itemPrice={productPrice}
+        itemImage={productImageLink}
+        itemName={productName}
+        parentName={"smallCardBtn"}
+      />
       <div className={styles.totalAndDelete}>
         <button
           className={styles.delete}
